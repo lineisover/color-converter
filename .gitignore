@@ -160,3 +160,6 @@ cython_debug/
 #.idea/
 
 .vscode/
+colorconverter.build/
+colorconverter.dist/
+colorconverter.exe
