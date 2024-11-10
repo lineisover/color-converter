@@ -13,8 +13,6 @@ class App(BaseWidget):
     def __init__(self):
         super().__init__('Color Converter')
         
-        self.setGeometry(100, 100, 500, 300)
-        
         self._red_channel = ControlText('Red', default='0')
         self._green_channel = ControlText('Green', default='0')
         self._blue_channel = ControlText('Blue', default='0')
