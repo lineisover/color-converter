@@ -1,0 +1,4 @@
+SETTINGS_PRIORITY = 1
+
+PYFORMS_STYLESHEET = 'src\style.css'
+PYFORMS_STYLESHEET_LINUX = 'src\style.css'

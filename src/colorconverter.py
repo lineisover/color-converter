@@ -1,6 +1,10 @@
 import struct
 import argparse
 
+from pyforms import start_app
+from forms import App
+
+
 
 def dec_to_rgba(r, g, b, a):
     packed_color = struct.pack('BBBB', b, g, r, a)
@@ -13,7 +17,12 @@ def rgba_to_dec(color):
     print(f'r: {r}, g: {g}, b: {b}, a: {a}')
 
 
+def interface():
+    start_app(App, geometry=(200, 200, 200, 200))
+
+
 def main():
+    
     parser = argparse.ArgumentParser(description='Color converter')
     
     parser.add_argument('-mode', help='Выбор режима конвертирования: "dec_to_rgba" для конвертации из десятичного кодирования в RGBA или "rgba_to_dec" для конвертации из RGBA в десятичное кодирование')
@@ -24,6 +33,9 @@ def main():
     parser.add_argument('-a', help='Значение альфа-канала (только для режима "rgba_to_dec")')
 
     args = parser.parse_args()
+    
+    if not args.mode:
+        interface()
 
     if args.mode == 'dec_to_rgba':
         rgba_to_dec(int(args.color))
